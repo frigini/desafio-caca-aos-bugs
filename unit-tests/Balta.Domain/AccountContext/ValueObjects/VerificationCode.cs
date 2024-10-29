@@ -23,10 +23,10 @@ public class VerificationCode
 
     #region Factories
 
-    public static VerificationCode ShouldCreate(IDateTimeProvider dateTimeProvider) =>
+    public static VerificationCode ShouldCreate(IDateTimeProvider? dateTimeProvider) =>
         new(
             Guid.NewGuid().ToString("N")[..MinLength].ToUpper(), 
-            dateTimeProvider.UtcNow.AddMinutes(5));
+            dateTimeProvider == null ? DateTime.UtcNow : DateTime.UtcNow.AddMinutes(5));
 
     #endregion
 
