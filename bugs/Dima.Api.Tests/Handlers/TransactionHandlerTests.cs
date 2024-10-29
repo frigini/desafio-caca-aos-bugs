@@ -14,8 +14,8 @@ namespace Dima.Api.Tests.Handlers
         private readonly DbContextOptions<AppDbContext> _options;
         private readonly AppDbContext _appDbContext;
         private readonly TransactionHandler _handler;
-        private string UserId = Guid.NewGuid().ToString();
-        private Category _category = null!;
+        private readonly string _userId = Guid.NewGuid().ToString();
+        private readonly Category _category = null!;
 
         public TransactionHandlerTests()
         {
@@ -28,7 +28,7 @@ namespace Dima.Api.Tests.Handlers
 
             _category = new Category
             {
-                UserId = UserId,
+                UserId = _userId,
                 Title = "Title original",
                 Description = "Description original"
             };
@@ -36,7 +36,6 @@ namespace Dima.Api.Tests.Handlers
 
         private async Task CreateCategory()
         {
-
             await _appDbContext.Categories.AddAsync(_category);
             await _appDbContext.SaveChangesAsync();
         }
@@ -262,6 +261,7 @@ namespace Dima.Api.Tests.Handlers
 
             var getTransactionByPeriodRequest = new GetTransactionsByPeriodRequest
             {
+                UserId = userId,
                 StartDate = DateTime.Now.AddDays(-2).Date,
                 EndDate = DateTime.Now.Date
             };
@@ -273,16 +273,13 @@ namespace Dima.Api.Tests.Handlers
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Data);
-
-            foreach(var item in result.Data)
-            {
-                Assert.Equal(item.UserId, transactions.First().UserId);
-                Assert.Equal(item.Title, transactions.First().Title);
-                Assert.Equal(item.Amount, transactions.First().Amount);
-                Assert.Equal(item.Type, transactions.First().Type);
-                Assert.Equal(item.PaidOrReceivedAt, transactions.First().PaidOrReceivedAt);
-                Assert.Equal(item.CategoryId, transactions.First().CategoryId);
-            }
+            Assert.NotEmpty(result.Data);
+            Assert.Equal(result.Data.Single().UserId, transactions.First().UserId);
+            Assert.Equal(result.Data.Single().Title, transactions.First().Title);
+            Assert.Equal(result.Data.Single().Amount, transactions.First().Amount);
+            Assert.Equal(result.Data.Single().Type, transactions.First().Type);
+            Assert.Equal(result.Data.Single().PaidOrReceivedAt, transactions.First().PaidOrReceivedAt);
+            Assert.Equal(result.Data.Single().CategoryId, transactions.First().CategoryId);
         }
     }
 }
