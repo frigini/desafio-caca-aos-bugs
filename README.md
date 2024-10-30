@@ -8,7 +8,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 ## Participantes
 ### 🚀 Líder Técnico
-[NOME e GITHUB]
+[Filipe Nunes Frigini e [GITHUB](https://github.com/frigini)]
 
 ### 👻 Caçadores de Bugs
 * [NOME e GITHUB]
