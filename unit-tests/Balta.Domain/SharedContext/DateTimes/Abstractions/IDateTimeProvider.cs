@@ -1,4 +1,4 @@
-namespace Balta.Domain.SharedContext.Abstractions;
+namespace Balta.Domain.SharedContext.DateTimes.Abstractions;
 
 public interface IDateTimeProvider
 {

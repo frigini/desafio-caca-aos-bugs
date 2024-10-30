@@ -1,6 +1,6 @@
 using Balta.Domain.AccountContext.ValueObjects;
 using Balta.Domain.AccountContext.ValueObjects.Exceptions;
-using Balta.Domain.SharedContext.Abstractions;
+using Balta.Domain.SharedContext.DateTimes.Abstractions;
 using Balta.Domain.SharedContext.Extensions;
 using Moq;
 
