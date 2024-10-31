@@ -11,7 +11,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 [Filipe Nunes Frigini e [GITHUB](https://github.com/frigini)]
 
 ### 👻 Caçadores de Bugs
-* [NOME e GITHUB]
+* [Pablo Reis e [GITHUB](https://github.com/pablo-reis)]
 * [NOME e GITHUB]
 * [NOME e GITHUB]
 * [NOME e GITHUB]
