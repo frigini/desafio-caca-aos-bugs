@@ -12,7 +12,7 @@ Depuração e solução de bugs, pensamento crítico e analítico, segurança e 
 
 ### 👻 Caçadores de Bugs
 * [Pablo Reis e [GITHUB](https://github.com/pablo-reis)]
-* [NOME e GITHUB]
+* [Bruno Felipe e [GITHUB](https://github.com/azumamagus)]
 * [NOME e GITHUB]
 * [NOME e GITHUB]
 
